@@ -1,0 +1,5929 @@
+{
+  "version": 2,
+  "checkedAt": "2026-11-24",
+  "categories": [
+    {
+      "id": "intro-start",
+      "name": "程序起步",
+      "color": "#ff596e",
+      "num": "01"
+    },
+    {
+      "id": "intro-control",
+      "name": "控制流程",
+      "color": "#ff982e",
+      "num": "02"
+    },
+    {
+      "id": "intro-sequence",
+      "name": "数组与字符串",
+      "color": "#f4bf32",
+      "num": "03"
+    },
+    {
+      "id": "intro-model",
+      "name": "函数与建模",
+      "color": "#45c887",
+      "num": "04"
+    },
+    {
+      "id": "intro-algorithm",
+      "name": "基础算法",
+      "color": "#36bde8",
+      "num": "05"
+    },
+    {
+      "id": "intro-structure",
+      "name": "搜索与数据结构",
+      "color": "#6d8cff",
+      "num": "06"
+    },
+    {
+      "id": "intro-math",
+      "name": "基础数学与递推",
+      "color": "#be83ff",
+      "num": "07"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "intro-output",
+      "name": "程序骨架与固定输出",
+      "cat": "intro-start",
+      "deps": [],
+      "desc": "从 main 函数开始，逐行输出指定文本，用样例验证程序能够编译和运行。",
+      "goals": [
+        "写出含 main 函数的 C++ 程序",
+        "控制每行文本和换行符"
+      ],
+      "wiki": "lang/helloworld/",
+      "order": 1,
+      "keywords": [
+        "固定输出",
+        "打印图案",
+        "Hello World",
+        "程序骨架"
+      ],
+      "tags": [
+        353
+      ],
+      "layer": 0
+    },
+    {
+      "id": "intro-input",
+      "name": "整数输入与变量",
+      "cat": "intro-start",
+      "deps": [
+        "intro-output"
+      ],
+      "desc": "读取若干整数，存入变量，再按题意计算并输出。",
+      "goals": [
+        "区分变量的声明与赋值",
+        "用 cin 读入空格或换行分隔的数据"
+      ],
+      "wiki": "lang/var/",
+      "order": 2,
+      "keywords": [
+        "读入整数",
+        "输入输出",
+        "变量",
+        "整数加法"
+      ],
+      "tags": [
+        353
+      ],
+      "layer": 1
+    },
+    {
+      "id": "intro-types",
+      "name": "数值类型与转换",
+      "cat": "intro-start",
+      "deps": [
+        "intro-input"
+      ],
+      "desc": "依据数据范围选择 int、long long 和 double，观察类型转换对结果的影响。",
+      "goals": [
+        "判断运算是否可能溢出",
+        "预测浮点转整数和整数转布尔的结果"
+      ],
+      "wiki": "lang/var/",
+      "order": 3,
+      "keywords": [
+        "数值类型",
+        "long long",
+        "浮点截断",
+        "类型转换"
+      ],
+      "tags": [
+        353
+      ],
+      "layer": 2
+    },
+    {
+      "id": "intro-operators",
+      "name": "四则运算与优先级",
+      "cat": "intro-start",
+      "deps": [
+        "intro-input"
+      ],
+      "desc": "把题目公式写成表达式，核对括号、运算顺序和中间结果。",
+      "goals": [
+        "正确使用加减乘除和括号",
+        "在乘法前检查操作数类型"
+      ],
+      "wiki": "lang/op/",
+      "order": 4,
+      "keywords": [
+        "四则运算",
+        "表达式",
+        "运算优先级"
+      ],
+      "tags": [
+        353
+      ],
+      "layer": 2
+    },
+    {
+      "id": "intro-division",
+      "name": "整除、取余与向上取整",
+      "cat": "intro-start",
+      "deps": [
+        "intro-operators"
+      ],
+      "desc": "将数量分配、对齐时间等题意翻译成整数商、余数和向上取整。",
+      "goals": [
+        "区分 / 和 % 的用途",
+        "推导非负整数的向上取整公式"
+      ],
+      "wiki": "lang/op/",
+      "order": 5,
+      "keywords": [
+        "取余",
+        "整除",
+        "向上取整",
+        "分组",
+        "带余除法"
+      ],
+      "tags": [
+        353
+      ],
+      "layer": 3
+    },
+    {
+      "id": "intro-decimals",
+      "name": "浮点计算与小数位数",
+      "cat": "intro-start",
+      "deps": [
+        "intro-types",
+        "intro-operators"
+      ],
+      "desc": "使用浮点运算避免整数除法丢失小数，按要求输出固定小数位。",
+      "goals": [
+        "使用 fixed 和 setprecision",
+        "从题目给定精度选择计算与输出方式"
+      ],
+      "wiki": "lang/op/",
+      "order": 6,
+      "keywords": [
+        "格式化输出",
+        "小数位",
+        "精度",
+        "浮点数",
+        "四舍五入"
+      ],
+      "tags": [
+        353
+      ],
+      "layer": 4
+    },
+    {
+      "id": "intro-digits",
+      "name": "数字拆位与重组",
+      "cat": "intro-start",
+      "deps": [
+        "intro-division"
+      ],
+      "desc": "通过除以十和对十取余提取数位，指定先后顺序输出。",
+      "goals": [
+        "独立取出个位、十位和百位",
+        "判断反转后前导零是否需要保留"
+      ],
+      "wiki": "lang/op/",
+      "order": 7,
+      "keywords": [
+        "数位",
+        "拆位",
+        "数字反转",
+        "个位"
+      ],
+      "tags": [
+        353,
+        355
+      ],
+      "layer": 4
+    },
+    {
+      "id": "intro-compare",
+      "name": "关系运算与双分支",
+      "cat": "intro-control",
+      "deps": [
+        "intro-input"
+      ],
+      "desc": "根据大小、相等或奇偶条件选择输出分支，覆盖恰好相等的边界。",
+      "goals": [
+        "区分 = 和 ==",
+        "用 if / else 处理互斥情况"
+      ],
+      "wiki": "lang/branch/",
+      "order": 8,
+      "keywords": [
+        "比较",
+        "双分支",
+        "if else",
+        "奇偶"
+      ],
+      "tags": [
+        354
+      ],
+      "layer": 2
+    },
+    {
+      "id": "intro-logic",
+      "name": "布尔表达式与复合条件",
+      "cat": "intro-control",
+      "deps": [
+        "intro-compare",
+        "intro-division"
+      ],
+      "desc": "用逻辑与、或、非把多个小条件合成一个判定。",
+      "goals": [
+        "用括号表明逻辑组合顺序",
+        "检查条件真假组合及边界"
+      ],
+      "wiki": "lang/branch/",
+      "order": 9,
+      "keywords": [
+        "布尔",
+        "逻辑与",
+        "逻辑或",
+        "异或",
+        "复合条件"
+      ],
+      "tags": [
+        354
+      ],
+      "layer": 4
+    },
+    {
+      "id": "intro-branches",
+      "name": "多分支与分段规则",
+      "cat": "intro-control",
+      "deps": [
+        "intro-logic",
+        "intro-decimals"
+      ],
+      "desc": "把分段标准拆成互斥区间或允许重叠的条件链。",
+      "goals": [
+        "判断何处应写 else if 或独立 if",
+        "核对各段端点是否重叠或遗漏"
+      ],
+      "wiki": "lang/branch/",
+      "order": 10,
+      "keywords": [
+        "分段函数",
+        "多分支",
+        "条件链",
+        "分段计费"
+      ],
+      "tags": [
+        354
+      ],
+      "layer": 5
+    },
+    {
+      "id": "intro-calendar",
+      "name": "日期、时间与进位",
+      "cat": "intro-control",
+      "deps": [
+        "intro-branches",
+        "intro-digits"
+      ],
+      "desc": "将单位统一为分钟或天，再处理跨单位进位和闰年条件。",
+      "goals": [
+        "表示日期或时刻",
+        "按规则处理大月、小月、闰年或跨时刻差值"
+      ],
+      "wiki": "lang/branch/",
+      "order": 11,
+      "keywords": [
+        "时间换算",
+        "年月日",
+        "日期",
+        "闰年",
+        "进位"
+      ],
+      "tags": [
+        353,
+        354
+      ],
+      "layer": 6
+    },
+    {
+      "id": "intro-for",
+      "name": "已知次数的 for 循环",
+      "cat": "intro-control",
+      "deps": [
+        "intro-compare",
+        "intro-operators"
+      ],
+      "desc": "写出循环初值、继续条件和步进，按指定次数重复同一操作。",
+      "goals": [
+        "正确处理 0 或 1 次迭代",
+        "用单一累加变量保存结果"
+      ],
+      "wiki": "lang/loop/",
+      "order": 12,
+      "keywords": [
+        "for 循环",
+        "循环求和",
+        "循环次数"
+      ],
+      "tags": [
+        355
+      ],
+      "layer": 3
+    },
+    {
+      "id": "intro-count",
+      "name": "计数、分类与最值",
+      "cat": "intro-control",
+      "deps": [
+        "intro-for",
+        "intro-logic"
+      ],
+      "desc": "循环读取数据，维护类别计数与当前最值，避免误设初值。",
+      "goals": [
+        "用条件更新计数器",
+        "区分最大值、个数及平均值"
+      ],
+      "wiki": "lang/loop/",
+      "order": 13,
+      "keywords": [
+        "计数器",
+        "分类",
+        "求最值",
+        "分类平均",
+        "最大值"
+      ],
+      "tags": [
+        355
+      ],
+      "layer": 5
+    },
+    {
+      "id": "intro-while",
+      "name": "未知次数的 while 循环",
+      "cat": "intro-control",
+      "deps": [
+        "intro-for",
+        "intro-division"
+      ],
+      "desc": "根据状态是否达到目标继续迭代，先写清终止条件。",
+      "goals": [
+        "判断何时先处理再判断",
+        "确保每次循环推进到终止条件"
+      ],
+      "wiki": "lang/loop/",
+      "order": 14,
+      "keywords": [
+        "while 循环",
+        "迭代",
+        "未知次数",
+        "终止条件"
+      ],
+      "tags": [
+        355
+      ],
+      "layer": 4
+    },
+    {
+      "id": "intro-nested",
+      "name": "双重循环与图形行列",
+      "cat": "intro-control",
+      "deps": [
+        "intro-for",
+        "intro-count"
+      ],
+      "desc": "使用外层循环控制行、内层循环控制列或每行元素数。",
+      "goals": [
+        "为内外层分别设置界限",
+        "验证图形首末行与换行的位置"
+      ],
+      "wiki": "lang/loop/",
+      "order": 15,
+      "keywords": [
+        "双重循环",
+        "嵌套循环",
+        "输出矩形",
+        "数字三角形"
+      ],
+      "tags": [
+        355
+      ],
+      "layer": 6
+    },
+    {
+      "id": "intro-arrays",
+      "name": "一维数组与索引",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-for"
+      ],
+      "desc": "将输入保存为可随机访问的序列，使用下标访问、倒序和查找。",
+      "goals": [
+        "清楚下标起点与末尾位置",
+        "将读入、访问与输出拆成三个步骤"
+      ],
+      "wiki": "lang/array/",
+      "order": 16,
+      "keywords": [
+        "一维数组",
+        "索引",
+        "逆序",
+        "线性查找"
+      ],
+      "tags": [
+        356
+      ],
+      "layer": 4
+    },
+    {
+      "id": "intro-frequency",
+      "name": "频数表与去重",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-arrays",
+        "intro-count"
+      ],
+      "desc": "将取值映射成计数数组下标，区分首次出现和再次出现。",
+      "goals": [
+        "根据值域确定频数表大小",
+        "在按输入顺序保留元素时记录出现状态"
+      ],
+      "wiki": "lang/array/",
+      "order": 17,
+      "keywords": [
+        "频数表",
+        "计数数组",
+        "直方图",
+        "去重"
+      ],
+      "tags": [
+        356,
+        504
+      ],
+      "layer": 6
+    },
+    {
+      "id": "intro-runs",
+      "name": "连续段与滑动状态",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-arrays",
+        "intro-count"
+      ],
+      "desc": "扫描数组时维护当前连续段的长度，遇到断点时重新计数。",
+      "goals": [
+        "区分当前连续段与全局最优",
+        "验证全相同和末段最长的输入"
+      ],
+      "wiki": "lang/array/",
+      "order": 18,
+      "keywords": [
+        "最长连续段",
+        "连续计数",
+        "最长连号",
+        "平台"
+      ],
+      "tags": [
+        356
+      ],
+      "layer": 7
+    },
+    {
+      "id": "intro-matrix",
+      "name": "二维数组与行列遍历",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-arrays",
+        "intro-nested"
+      ],
+      "desc": "为每个元素分配行列下标，逐行读取并写出对称或转置关系。",
+      "goals": [
+        "掌握按行读入与输出",
+        "核对非方阵的下标交换"
+      ],
+      "wiki": "lang/array/",
+      "order": 19,
+      "keywords": [
+        "二维数组",
+        "矩阵",
+        "行列",
+        "转置",
+        "矩阵加法"
+      ],
+      "tags": [
+        356
+      ],
+      "layer": 7
+    },
+    {
+      "id": "intro-grid",
+      "name": "网格坐标与边界",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-matrix",
+        "intro-logic"
+      ],
+      "desc": "在网格中处理相邻坐标、边界和局部填充。",
+      "goals": [
+        "将题目的坐标转换成数组下标",
+        "在读写邻格前检查越界"
+      ],
+      "wiki": "lang/array/",
+      "order": 20,
+      "keywords": [
+        "网格",
+        "网格坐标",
+        "边界",
+        "矩阵邻域",
+        "棋盘"
+      ],
+      "tags": [
+        356,
+        111
+      ],
+      "layer": 8
+    },
+    {
+      "id": "intro-char",
+      "name": "字符编码与大小写",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-types",
+        "intro-compare"
+      ],
+      "desc": "读取并修改字符，使用字符字面量的区间判断分类。",
+      "goals": [
+        "区分字符、整数和字符串",
+        "理解字符偏移和字符大小写转换"
+      ],
+      "wiki": "lang/csl/string/",
+      "order": 21,
+      "keywords": [
+        "字符编码",
+        "ASCII",
+        "大小写",
+        "字母转换"
+      ],
+      "tags": [
+        353,
+        357
+      ],
+      "layer": 3
+    },
+    {
+      "id": "intro-string",
+      "name": "字符串遍历与切片",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-char",
+        "intro-arrays"
+      ],
+      "desc": "按下标遍历字符串，使用长度、查找和切片接口处理文本。",
+      "goals": [
+        "区分下标与截取长度",
+        "检查短字符串及查找失败的情况"
+      ],
+      "wiki": "lang/csl/string/",
+      "order": 22,
+      "keywords": [
+        "string",
+        "字符串切片",
+        "substr",
+        "查找子串"
+      ],
+      "tags": [
+        2,
+        357
+      ],
+      "layer": 5
+    },
+    {
+      "id": "intro-tokens",
+      "name": "整行读入与分词",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-string"
+      ],
+      "desc": "借助整行读入和逐字符扫描找到单词边界，保留题意要求的分隔符。",
+      "goals": [
+        "区分 cin 与 getline",
+        "处理空格、句末和连续分隔符"
+      ],
+      "wiki": "lang/csl/string/",
+      "order": 23,
+      "keywords": [
+        "getline",
+        "整行读入",
+        "分词",
+        "单词",
+        "token"
+      ],
+      "tags": [
+        2,
+        357
+      ],
+      "layer": 8
+    },
+    {
+      "id": "intro-mirror",
+      "name": "回文与首尾指针",
+      "cat": "intro-sequence",
+      "deps": [
+        "intro-string",
+        "intro-runs"
+      ],
+      "desc": "从字符串两端向中间移动指针，比较对应位置或做反序。",
+      "goals": [
+        "正确设置左右初值与停止条件",
+        "覆盖奇偶长度"
+      ],
+      "wiki": "lang/csl/string/",
+      "order": 24,
+      "keywords": [
+        "回文",
+        "反转字符串",
+        "双指针",
+        "首尾"
+      ],
+      "tags": [
+        2,
+        345,
+        357
+      ],
+      "layer": 8
+    },
+    {
+      "id": "intro-func",
+      "name": "函数、参数与返回值",
+      "cat": "intro-model",
+      "deps": [
+        "intro-types",
+        "intro-compare"
+      ],
+      "desc": "把重复的计算抽成有意义的函数，用输入与返回值描述接口。",
+      "goals": [
+        "定义并调用带参数的函数",
+        "区分形参与局部变量"
+      ],
+      "wiki": "lang/func/",
+      "order": 25,
+      "keywords": [
+        "函数定义",
+        "参数",
+        "返回值",
+        "封装函数"
+      ],
+      "tags": [
+        359
+      ],
+      "layer": 3
+    },
+    {
+      "id": "intro-records",
+      "name": "结构体建模与多字段",
+      "cat": "intro-model",
+      "deps": [
+        "intro-func",
+        "intro-arrays"
+      ],
+      "desc": "使用结构体将一条记录的多个属性绑定在一起，比较或更新记录。",
+      "goals": [
+        "为属性选择字段类型",
+        "读入结构体数组并保持字段同步"
+      ],
+      "wiki": "lang/struct/",
+      "order": 26,
+      "keywords": [
+        "结构体",
+        "struct",
+        "记录",
+        "多字段",
+        "学生信息"
+      ],
+      "tags": [
+        358
+      ],
+      "layer": 10
+    },
+    {
+      "id": "intro-simulate",
+      "name": "按规则模拟状态变化",
+      "cat": "intro-model",
+      "deps": [
+        "intro-branches",
+        "intro-while",
+        "intro-arrays"
+      ],
+      "desc": "将操作拆成有顺序的状态转移，逐步核对每轮中间结果。",
+      "goals": [
+        "明确状态变量的初值",
+        "按照题意更新多个有关状态"
+      ],
+      "wiki": "basic/simulate/",
+      "order": 27,
+      "keywords": [
+        "模拟",
+        "状态更新",
+        "过程模拟"
+      ],
+      "tags": [
+        1
+      ],
+      "layer": 7
+    },
+    {
+      "id": "intro-vector",
+      "name": "vector 与动态长度",
+      "cat": "intro-model",
+      "deps": [
+        "intro-arrays"
+      ],
+      "desc": "在输入和操作次数决定长度时，用 vector 或嵌套 vector 保存数据。",
+      "goals": [
+        "使用 push_back 与 size",
+        "为嵌套容器分配正确的内外层长度"
+      ],
+      "wiki": "lang/csl/sequence-container/",
+      "order": 28,
+      "keywords": [
+        "vector",
+        "动态数组",
+        "变长数组",
+        "寄包柜"
+      ],
+      "tags": [
+        356
+      ],
+      "layer": 5
+    },
+    {
+      "id": "intro-enumerate",
+      "name": "枚举候选与检验",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-nested",
+        "intro-logic"
+      ],
+      "desc": "给候选变量设置范围，再用等式或规则筛出合法解。",
+      "goals": [
+        "估计枚举规模",
+        "按照可行范围剪掉明显无效的候选"
+      ],
+      "wiki": "basic/enumerate/",
+      "order": 29,
+      "keywords": [
+        "枚举",
+        "暴力",
+        "遍历候选",
+        "元组"
+      ],
+      "tags": [
+        22,
+        111
+      ],
+      "layer": 7
+    },
+    {
+      "id": "intro-complexity",
+      "name": "数据范围与复杂度估算",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-enumerate",
+        "intro-arrays"
+      ],
+      "desc": "比较两层扫描与单层扫描的增长速度，使用小规模实验验证分析。",
+      "goals": [
+        "写出 O(n) 与 O(n²) 的区别",
+        "从约束判断能否枚举全部候选"
+      ],
+      "wiki": "basic/complexity/",
+      "order": 30,
+      "keywords": [
+        "时间复杂度",
+        "空间复杂度",
+        "数据规模",
+        "数量级"
+      ],
+      "tags": [
+        111
+      ],
+      "layer": 8
+    },
+    {
+      "id": "intro-recursion",
+      "name": "递归基与调用栈",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-func",
+        "intro-while"
+      ],
+      "desc": "把答案写成较小的同类问题，明确最小情形及返回的值。",
+      "goals": [
+        "画出一条调用链",
+        "检查参数朝终止条件缩小"
+      ],
+      "wiki": "basic/divide-and-conquer/",
+      "order": 31,
+      "keywords": [
+        "递归",
+        "递归终止",
+        "递归基",
+        "调用栈"
+      ],
+      "tags": [
+        54,
+        359
+      ],
+      "layer": 7
+    },
+    {
+      "id": "intro-recurrence",
+      "name": "线性递推与初值",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-arrays",
+        "intro-for"
+      ],
+      "desc": "从几个可直接计算的初值出发，按下标递推后续值。",
+      "goals": [
+        "定义数组元素的含义",
+        "画出每个状态依赖的前一项或前两项"
+      ],
+      "wiki": "dp/basic/",
+      "order": 32,
+      "keywords": [
+        "递推",
+        "斐波那契",
+        "状态转移",
+        "数列"
+      ],
+      "tags": [
+        12
+      ],
+      "layer": 6
+    },
+    {
+      "id": "intro-permutation",
+      "name": "回溯枚举排列",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-recursion",
+        "intro-enumerate"
+      ],
+      "desc": "用递归逐位填数，通过访问标记保证每个元素只用一次。",
+      "goals": [
+        "写出选择、递归、撤销三个步骤",
+        "按规定次序产生答案"
+      ],
+      "wiki": "search/dfs/",
+      "order": 33,
+      "keywords": [
+        "排列",
+        "全排列",
+        "回溯",
+        "排列枚举"
+      ],
+      "tags": [
+        4,
+        127
+      ],
+      "layer": 11
+    },
+    {
+      "id": "intro-subset",
+      "name": "子集与组合枚举",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-recursion",
+        "intro-enumerate"
+      ],
+      "desc": "在每一个元素处决定选或不选，或维护递增下标避免重复组合。",
+      "goals": [
+        "区分长度固定和长度任意的选择",
+        "保证组合的升序输出及边界"
+      ],
+      "wiki": "search/dfs/",
+      "order": 34,
+      "keywords": [
+        "子集",
+        "组合",
+        "选或不选",
+        "组合枚举"
+      ],
+      "tags": [
+        4,
+        111,
+        127
+      ],
+      "layer": 9
+    },
+    {
+      "id": "intro-sort",
+      "name": "一维排序与比较",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-frequency",
+        "intro-complexity"
+      ],
+      "desc": "对整数序列进行排序，理解升降序、比较规则和稳定性。",
+      "goals": [
+        "使用 std::sort",
+        "区分排序与值域小的计数排序"
+      ],
+      "wiki": "basic/sort-intro/",
+      "order": 35,
+      "keywords": [
+        "排序",
+        "sort",
+        "计数排序",
+        "桶排",
+        "整数排序"
+      ],
+      "tags": [
+        113
+      ],
+      "layer": 9
+    },
+    {
+      "id": "intro-sort-record",
+      "name": "多关键字排序与并列",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-sort",
+        "intro-records"
+      ],
+      "desc": "用首关键字、次关键字和并列规则对记录排序。",
+      "goals": [
+        "写出满足严格弱序的比较函数",
+        "处理同分或同日期记录"
+      ],
+      "wiki": "basic/sort-intro/",
+      "order": 36,
+      "keywords": [
+        "多关键字排序",
+        "比较器",
+        "稳定排序",
+        "并列"
+      ],
+      "tags": [
+        113
+      ],
+      "layer": 11
+    },
+    {
+      "id": "intro-prefix",
+      "name": "前缀和与区间查询",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-arrays",
+        "intro-complexity"
+      ],
+      "desc": "构造从起点到当前位置的累加表，把区间查询变成两项之差。",
+      "goals": [
+        "设定前缀和的第零项",
+        "正确写出闭区间查询公式"
+      ],
+      "wiki": "basic/prefix-sum/",
+      "order": 37,
+      "keywords": [
+        "前缀和",
+        "区间求和",
+        "区间和",
+        "累加表"
+      ],
+      "tags": [
+        254
+      ],
+      "layer": 9
+    },
+    {
+      "id": "intro-binary",
+      "name": "有序数组的边界二分",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-sort",
+        "intro-arrays"
+      ],
+      "desc": "在有序序列中借助单调性折半缩小候选范围，找到首次或末次出现。",
+      "goals": [
+        "说明维护的区间含义",
+        "正确判断找不到和存在重复值的情况"
+      ],
+      "wiki": "basic/binary/",
+      "order": 38,
+      "keywords": [
+        "二分查找",
+        "lower_bound",
+        "upper_bound",
+        "边界"
+      ],
+      "tags": [
+        45
+      ],
+      "layer": 10
+    },
+    {
+      "id": "intro-binary-answer",
+      "name": "单调判定与二分答案",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-binary",
+        "intro-func"
+      ],
+      "desc": "将最优值问题改写为“这个值可不可行”，在整数或实数范围二分。",
+      "goals": [
+        "证明可行区间单调",
+        "明确二分收缩方向和边界"
+      ],
+      "wiki": "basic/binary/",
+      "order": 39,
+      "keywords": [
+        "二分答案",
+        "可行性判定",
+        "单调判定"
+      ],
+      "tags": [
+        45
+      ],
+      "layer": 11
+    },
+    {
+      "id": "intro-greedy",
+      "name": "排序后的局部最优",
+      "cat": "intro-algorithm",
+      "deps": [
+        "intro-sort-record",
+        "intro-complexity"
+      ],
+      "desc": "给候选排序并逐项做局部选择，用交换论证解释选择的合理性。",
+      "goals": [
+        "说出贪心选择依据",
+        "构造小反例检查可疑规则"
+      ],
+      "wiki": "basic/greedy/",
+      "order": 40,
+      "keywords": [
+        "贪心",
+        "排序贪心",
+        "局部最优",
+        "交换论证"
+      ],
+      "tags": [
+        7,
+        113
+      ],
+      "layer": 12
+    },
+    {
+      "id": "intro-set",
+      "name": "集合运算与成员查询",
+      "cat": "intro-structure",
+      "deps": [
+        "intro-frequency",
+        "intro-sort"
+      ],
+      "desc": "用集合保存互不相同的值，判断是否存在并练习交并差。",
+      "goals": [
+        "正确调用 insert 和 count",
+        "解释集合排序和去重的效果"
+      ],
+      "wiki": "lang/csl/associative-container/",
+      "order": 41,
+      "keywords": [
+        "set",
+        "集合运算",
+        "集合",
+        "成员查询"
+      ],
+      "tags": [
+        504
+      ],
+      "layer": 10
+    },
+    {
+      "id": "intro-map",
+      "name": "键值映射与字典",
+      "cat": "intro-structure",
+      "deps": [
+        "intro-set",
+        "intro-string"
+      ],
+      "desc": "用键映射到分数、次数或其他属性，避免把复杂键当成下标。",
+      "goals": [
+        "更新已有键并区分不存在的键",
+        "比较数组与 map 的适用场景"
+      ],
+      "wiki": "lang/csl/associative-container/",
+      "order": 42,
+      "keywords": [
+        "map",
+        "键值",
+        "映射",
+        "字典",
+        "学籍管理"
+      ],
+      "tags": [
+        504
+      ],
+      "layer": 12
+    },
+    {
+      "id": "intro-stack",
+      "name": "栈和括号匹配",
+      "cat": "intro-structure",
+      "deps": [
+        "intro-vector",
+        "intro-string"
+      ],
+      "desc": "用后进先出的顺序保存未完成的状态，弹出前检查是否为空。",
+      "goals": [
+        "实现入栈、栈顶和出栈",
+        "用栈检查括号配对"
+      ],
+      "wiki": "ds/stack/",
+      "order": 43,
+      "keywords": [
+        "栈",
+        "后进先出",
+        "括号匹配",
+        "stack"
+      ],
+      "tags": [
+        44,
+        287
+      ],
+      "layer": 8
+    },
+    {
+      "id": "intro-queue",
+      "name": "队列与循环报数",
+      "cat": "intro-structure",
+      "deps": [
+        "intro-vector",
+        "intro-simulate"
+      ],
+      "desc": "按先进先出处理待办项，用队列模拟出队与回到队尾。",
+      "goals": [
+        "实现入队、队首和出队",
+        "说明每个状态何时进入队列"
+      ],
+      "wiki": "ds/queue/",
+      "order": 44,
+      "keywords": [
+        "队列",
+        "先进先出",
+        "queue",
+        "循环报数"
+      ],
+      "tags": [
+        288
+      ],
+      "layer": 10
+    },
+    {
+      "id": "intro-graph",
+      "name": "邻接表建图",
+      "cat": "intro-structure",
+      "deps": [
+        "intro-vector",
+        "intro-sort"
+      ],
+      "desc": "将一条边保存为邻接关系，区分入边、出边和双向边。",
+      "goals": [
+        "依据有向或无向图存边",
+        "根据要求对每个邻接表排序"
+      ],
+      "wiki": "graph/save/",
+      "order": 45,
+      "keywords": [
+        "邻接表",
+        "建图",
+        "存图",
+        "有向图",
+        "图的存储"
+      ],
+      "tags": [
+        6
+      ],
+      "layer": 11
+    },
+    {
+      "id": "intro-dfs",
+      "name": "深度优先遍历与回退",
+      "cat": "intro-structure",
+      "deps": [
+        "intro-permutation",
+        "intro-grid"
+      ],
+      "desc": "在网格或树上深入一条分支，使用访问标记或回溯避免循环。",
+      "goals": [
+        "区分遍历标记和可撤销的路径标记",
+        "处理网格越界"
+      ],
+      "wiki": "search/dfs/",
+      "order": 46,
+      "keywords": [
+        "DFS",
+        "深度优先",
+        "递归搜索",
+        "网格搜索"
+      ],
+      "tags": [
+        4,
+        127
+      ],
+      "layer": 12
+    },
+    {
+      "id": "intro-bfs",
+      "name": "广度优先与最少步数",
+      "cat": "intro-structure",
+      "deps": [
+        "intro-queue",
+        "intro-grid"
+      ],
+      "desc": "使用队列按距离从小到大访问状态，求无权图首次到达的步数。",
+      "goals": [
+        "在入队时标记访问",
+        "用当前状态距离加一扩展邻居"
+      ],
+      "wiki": "search/bfs/",
+      "order": 47,
+      "keywords": [
+        "BFS",
+        "广度优先",
+        "最少步数",
+        "无权最短路"
+      ],
+      "tags": [
+        4,
+        126,
+        288
+      ],
+      "layer": 11
+    },
+    {
+      "id": "intro-gcd",
+      "name": "辗转相除与公倍数",
+      "cat": "intro-math",
+      "deps": [
+        "intro-division",
+        "intro-while",
+        "intro-func"
+      ],
+      "desc": "利用余数递推最大公约数，再从最大公约数计算最小公倍数。",
+      "goals": [
+        "正确处理零或相等输入",
+        "先做除法再乘以降低溢出风险"
+      ],
+      "wiki": "math/number-theory/gcd/",
+      "order": 48,
+      "keywords": [
+        "辗转相除",
+        "最大公约数",
+        "最小公倍数",
+        "gcd",
+        "lcm"
+      ],
+      "tags": [
+        5,
+        241
+      ],
+      "layer": 6
+    },
+    {
+      "id": "intro-prime",
+      "name": "试除、素数与因子",
+      "cat": "intro-math",
+      "deps": [
+        "intro-enumerate",
+        "intro-func"
+      ],
+      "desc": "用平方根以内的试除判断素数，并提取整数的质因子。",
+      "goals": [
+        "区分质数、合数与 1",
+        "说明为什么只需检查到平方根"
+      ],
+      "wiki": "math/number-theory/prime/",
+      "order": 49,
+      "keywords": [
+        "素数",
+        "试除",
+        "质因数",
+        "质因数分解"
+      ],
+      "tags": [
+        5,
+        239
+      ],
+      "layer": 9
+    },
+    {
+      "id": "intro-sieve",
+      "name": "批量筛质数",
+      "cat": "intro-math",
+      "deps": [
+        "intro-prime",
+        "intro-frequency"
+      ],
+      "desc": "用数组记录合数标记，比较逐个判断与批量筛选的成本。",
+      "goals": [
+        "理解埃氏筛为何可以从平方开始标记",
+        "按序保存筛出的质数用于查询"
+      ],
+      "wiki": "math/number-theory/sieve/",
+      "order": 50,
+      "keywords": [
+        "埃氏筛",
+        "欧拉筛",
+        "线性筛",
+        "素数筛"
+      ],
+      "tags": [
+        5,
+        72,
+        239,
+        475
+      ],
+      "layer": 10
+    },
+    {
+      "id": "intro-radix",
+      "name": "进制表示与转换",
+      "cat": "intro-math",
+      "deps": [
+        "intro-digits",
+        "intro-char"
+      ],
+      "desc": "将位值展开为整数，或者通过除基取余重新编码。",
+      "goals": [
+        "用乘基加位处理读入",
+        "逆序输出反复取余得到的各位"
+      ],
+      "wiki": "math/numeral-sys/base/",
+      "order": 51,
+      "keywords": [
+        "进制",
+        "二进制",
+        "进制转换",
+        "位值"
+      ],
+      "tags": [
+        5,
+        244,
+        314
+      ],
+      "layer": 5
+    },
+    {
+      "id": "intro-dp",
+      "name": "一维状态与最值转移",
+      "cat": "intro-math",
+      "deps": [
+        "intro-recurrence",
+        "intro-complexity"
+      ],
+      "desc": "为每个位置定义最优状态，通过转移把前面的结果复用于当前位置。",
+      "goals": [
+        "区分状态含义、初值与答案位置",
+        "写出转移后用小输入手算验证"
+      ],
+      "wiki": "dp/basic/",
+      "order": 52,
+      "keywords": [
+        "线性 DP",
+        "动态规划",
+        "最长上升子序列",
+        "最大子段和"
+      ],
+      "tags": [
+        3,
+        12,
+        444
+      ],
+      "layer": 9
+    }
+  ],
+  "exercises": [
+    {
+      "key": "intro-output:B2002",
+      "node": "intro-output",
+      "pid": "B2002",
+      "extra": [],
+      "note": "输出约定的文本。",
+      "url": "https://www.luogu.com.cn/problem/B2002",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "Hello,World!",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 0
+    },
+    {
+      "key": "intro-output:P1000",
+      "node": "intro-output",
+      "pid": "P1000",
+      "extra": [],
+      "note": "使用逐行输出或原始字符串准确对齐字符画。",
+      "url": "https://www.luogu.com.cn/problem/P1000",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "超级玛丽游戏",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-output"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/100",
+      "rank": 1
+    },
+    {
+      "key": "intro-output:B2025",
+      "node": "intro-output",
+      "pid": "B2025",
+      "extra": [],
+      "note": "按样例对齐四周的空格。",
+      "url": "https://www.luogu.com.cn/problem/B2025",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "输出字符菱形",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 2
+    },
+    {
+      "key": "intro-input:B2003",
+      "node": "intro-input",
+      "pid": "B2003",
+      "extra": [],
+      "note": "依次读取三个整数并选取第二个。",
+      "url": "https://www.luogu.com.cn/problem/B2003",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "输出第二个整数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 3
+    },
+    {
+      "key": "intro-input:P1001",
+      "node": "intro-input",
+      "pid": "P1001",
+      "extra": [],
+      "note": "读入两个整数后输出它们的和。",
+      "url": "https://www.luogu.com.cn/problem/P1001",
+      "tags": [
+        1
+      ],
+      "difficulty": 1,
+      "title": "A+B Problem",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/100",
+      "rank": 4
+    },
+    {
+      "key": "intro-input:B2007",
+      "node": "intro-input",
+      "pid": "B2007",
+      "extra": [],
+      "note": "练习以变量保存输入和运算结果。",
+      "url": "https://www.luogu.com.cn/problem/B2007",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "A + B 问题",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 5
+    },
+    {
+      "key": "intro-types:B2001",
+      "node": "intro-types",
+      "pid": "B2001",
+      "extra": [],
+      "note": "根据题目的输入上限选择 long long。",
+      "url": "https://www.luogu.com.cn/problem/B2001",
+      "tags": [
+        1,
+        353
+      ],
+      "difficulty": 1,
+      "title": "入门测试题目",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-types",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 6
+    },
+    {
+      "key": "intro-types:B2016",
+      "node": "intro-types",
+      "pid": "B2016",
+      "extra": [],
+      "note": "观察浮点数向零舍入。",
+      "url": "https://www.luogu.com.cn/problem/B2016",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "浮点数向零舍入",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-types",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 7
+    },
+    {
+      "key": "intro-types:B2019",
+      "node": "intro-types",
+      "pid": "B2019",
+      "extra": [],
+      "note": "观察零与非零转成 bool 的结果。",
+      "url": "https://www.luogu.com.cn/problem/B2019",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "整型与布尔型的转换",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-types",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 8
+    },
+    {
+      "key": "intro-operators:B2008",
+      "node": "intro-operators",
+      "pid": "B2008",
+      "extra": [],
+      "note": "通过括号固定先加后乘的顺序。",
+      "url": "https://www.luogu.com.cn/problem/B2008",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "计算 (a+b)×c 的值",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 9
+    },
+    {
+      "key": "intro-operators:P5703",
+      "node": "intro-operators",
+      "pid": "P5703",
+      "extra": [],
+      "note": "把数量与单价的关系写成乘法表达式。",
+      "url": "https://www.luogu.com.cn/problem/P5703",
+      "tags": [
+        5
+      ],
+      "difficulty": 1,
+      "title": "【深基2.例5】苹果采购",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/100",
+      "rank": 10
+    },
+    {
+      "key": "intro-operators:B2033",
+      "node": "intro-operators",
+      "pid": "B2033",
+      "extra": [],
+      "note": "核对整数乘积的取值范围。",
+      "url": "https://www.luogu.com.cn/problem/B2033",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "A*B 问题",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 11
+    },
+    {
+      "key": "intro-division:B2010",
+      "node": "intro-division",
+      "pid": "B2010",
+      "extra": [],
+      "note": "分别输出商和余数。",
+      "url": "https://www.luogu.com.cn/problem/B2010",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "带余除法",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 12
+    },
+    {
+      "key": "intro-division:P1421",
+      "node": "intro-division",
+      "pid": "P1421",
+      "extra": [],
+      "note": "用整除求最多能买到的数量。",
+      "url": "https://www.luogu.com.cn/problem/P1421",
+      "tags": [
+        1
+      ],
+      "difficulty": 1,
+      "title": "小玉买文具",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/100",
+      "rank": 13
+    },
+    {
+      "key": "intro-division:B2029",
+      "node": "intro-division",
+      "pid": "B2029",
+      "extra": [],
+      "note": "将剩余不足一桶的水算成一桶。",
+      "url": "https://www.luogu.com.cn/problem/B2029",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "大象喝水",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 14
+    },
+    {
+      "key": "intro-decimals:B2011",
+      "node": "intro-decimals",
+      "pid": "B2011",
+      "extra": [],
+      "note": "避免把整数商再转换成小数。",
+      "url": "https://www.luogu.com.cn/problem/B2011",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "计算分数的浮点数值",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-decimals",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 15
+    },
+    {
+      "key": "intro-decimals:P5706",
+      "node": "intro-decimals",
+      "pid": "P5706",
+      "extra": [],
+      "note": "计算平均量并固定小数位。",
+      "url": "https://www.luogu.com.cn/problem/P5706",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基2.例8】再分肥宅水",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-decimals",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/100",
+      "rank": 16
+    },
+    {
+      "key": "intro-decimals:B2031",
+      "node": "intro-decimals",
+      "pid": "B2031",
+      "extra": [],
+      "note": "根据三边计算面积并处理输出精度。",
+      "url": "https://www.luogu.com.cn/problem/B2031",
+      "tags": [
+        5,
+        353
+      ],
+      "difficulty": 2,
+      "title": "计算三角形面积",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-decimals",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 17
+    },
+    {
+      "key": "intro-digits:B2028",
+      "node": "intro-digits",
+      "pid": "B2028",
+      "extra": [],
+      "note": "逐个取出三位数的各位。",
+      "url": "https://www.luogu.com.cn/problem/B2028",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "反向输出一个三位数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-digits",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 18
+    },
+    {
+      "key": "intro-digits:P5705",
+      "node": "intro-digits",
+      "pid": "P5705",
+      "extra": [],
+      "note": "按题目要求反转小数文本。",
+      "url": "https://www.luogu.com.cn/problem/P5705",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基2.例7】数字反转",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-digits",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/100",
+      "rank": 19
+    },
+    {
+      "key": "intro-digits:B2068",
+      "node": "intro-digits",
+      "pid": "B2068",
+      "extra": [],
+      "note": "检查多组四位数的指定数位。",
+      "url": "https://www.luogu.com.cn/problem/B2068",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "统计满足条件的 4 位数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-digits",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 20
+    },
+    {
+      "key": "intro-compare:B2035",
+      "node": "intro-compare",
+      "pid": "B2035",
+      "extra": [],
+      "note": "覆盖正、负和零三种情况。",
+      "url": "https://www.luogu.com.cn/problem/B2035",
+      "tags": [
+        354
+      ],
+      "difficulty": 1,
+      "title": "判断数正负",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-compare",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 21
+    },
+    {
+      "key": "intro-compare:B2037",
+      "node": "intro-compare",
+      "pid": "B2037",
+      "extra": [],
+      "note": "通过余数选择奇数或偶数分支。",
+      "url": "https://www.luogu.com.cn/problem/B2037",
+      "tags": [
+        354
+      ],
+      "difficulty": 1,
+      "title": "奇偶数判断",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-compare",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 22
+    },
+    {
+      "key": "intro-compare:B2039",
+      "node": "intro-compare",
+      "pid": "B2039",
+      "extra": [],
+      "note": "分别输出大于、等于或小于。",
+      "url": "https://www.luogu.com.cn/problem/B2039",
+      "tags": [
+        354
+      ],
+      "difficulty": 1,
+      "title": "整数大小比较",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-compare",
+        "intro-input",
+        "intro-output"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 23
+    },
+    {
+      "key": "intro-logic:B2041",
+      "node": "intro-logic",
+      "pid": "B2041",
+      "extra": [],
+      "note": "写出满足彩盖条件之一的判断。",
+      "url": "https://www.luogu.com.cn/problem/B2041",
+      "tags": [
+        354
+      ],
+      "difficulty": 1,
+      "title": "收集瓶盖赢大奖",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 24
+    },
+    {
+      "key": "intro-logic:B2044",
+      "node": "intro-logic",
+      "pid": "B2044",
+      "extra": [],
+      "note": "区分至少一门与恰有一门不及格。",
+      "url": "https://www.luogu.com.cn/problem/B2044",
+      "tags": [
+        354
+      ],
+      "difficulty": 1,
+      "title": "有一门课不及格的学生",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 25
+    },
+    {
+      "key": "intro-logic:P5710",
+      "node": "intro-logic",
+      "pid": "P5710",
+      "extra": [],
+      "note": "组合奇偶和数值范围并按规则输出。",
+      "url": "https://www.luogu.com.cn/problem/P5710",
+      "tags": [
+        1
+      ],
+      "difficulty": 1,
+      "title": "【深基3.例2】数的性质",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/101",
+      "rank": 26
+    },
+    {
+      "key": "intro-branches:B2047",
+      "node": "intro-branches",
+      "pid": "B2047",
+      "extra": [],
+      "note": "把分段函数转成互斥条件。",
+      "url": "https://www.luogu.com.cn/problem/B2047",
+      "tags": [
+        354
+      ],
+      "difficulty": 1,
+      "title": "分段函数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 27
+    },
+    {
+      "key": "intro-branches:B2048",
+      "node": "intro-branches",
+      "pid": "B2048",
+      "extra": [],
+      "note": "依重量和是否加急处理计费。",
+      "url": "https://www.luogu.com.cn/problem/B2048",
+      "tags": [
+        354
+      ],
+      "difficulty": 1,
+      "title": "计算邮资",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 28
+    },
+    {
+      "key": "intro-branches:P1422",
+      "node": "intro-branches",
+      "pid": "P1422",
+      "extra": [],
+      "note": "累加各档电费并处理临界用量。",
+      "url": "https://www.luogu.com.cn/problem/P1422",
+      "tags": [],
+      "difficulty": 1,
+      "title": "小玉家的电费",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/101",
+      "rank": 29
+    },
+    {
+      "key": "intro-calendar:P1425",
+      "node": "intro-calendar",
+      "pid": "P1425",
+      "extra": [],
+      "note": "把起止时刻统一换成分钟。",
+      "url": "https://www.luogu.com.cn/problem/P1425",
+      "tags": [
+        5,
+        111
+      ],
+      "difficulty": 1,
+      "title": "小鱼的游泳时间",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-calendar",
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types",
+        "intro-digits"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/100",
+      "rank": 30
+    },
+    {
+      "key": "intro-calendar:P5711",
+      "node": "intro-calendar",
+      "pid": "P5711",
+      "extra": [],
+      "note": "组合能被 4、100 和 400 整除的条件。",
+      "url": "https://www.luogu.com.cn/problem/P5711",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基3.例3】闰年判断",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-calendar",
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types",
+        "intro-digits"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/101",
+      "rank": 31
+    },
+    {
+      "key": "intro-calendar:P5716",
+      "node": "intro-calendar",
+      "pid": "P5716",
+      "extra": [],
+      "note": "综合判断月份天数。",
+      "url": "https://www.luogu.com.cn/problem/P5716",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基3.例9】月份天数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-calendar",
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types",
+        "intro-digits"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/101",
+      "rank": 32
+    },
+    {
+      "key": "intro-for:B2054",
+      "node": "intro-for",
+      "pid": "B2054",
+      "extra": [],
+      "note": "读取固定人数的年龄并求平均。",
+      "url": "https://www.luogu.com.cn/problem/B2054",
+      "tags": [
+        107,
+        355
+      ],
+      "difficulty": 1,
+      "title": "求平均年龄",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 33
+    },
+    {
+      "key": "intro-for:B2056",
+      "node": "intro-for",
+      "pid": "B2056",
+      "extra": [],
+      "note": "一次循环统计和与均值。",
+      "url": "https://www.luogu.com.cn/problem/B2056",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "求整数的和与均值",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 34
+    },
+    {
+      "key": "intro-for:B2062",
+      "node": "intro-for",
+      "pid": "B2062",
+      "extra": [],
+      "note": "通过重复乘法计算乘方。",
+      "url": "https://www.luogu.com.cn/problem/B2062",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "乘方计算",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 35
+    },
+    {
+      "key": "intro-count:B2057",
+      "node": "intro-count",
+      "pid": "B2057",
+      "extra": [],
+      "note": "追踪已读分数中的最大值。",
+      "url": "https://www.luogu.com.cn/problem/B2057",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "最高的分数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-count",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 36
+    },
+    {
+      "key": "intro-count:B2061",
+      "node": "intro-count",
+      "pid": "B2061",
+      "extra": [],
+      "note": "给不同结果维护独立计数器。",
+      "url": "https://www.luogu.com.cn/problem/B2061",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "整数的个数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-count",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 37
+    },
+    {
+      "key": "intro-count:P5719",
+      "node": "intro-count",
+      "pid": "P5719",
+      "extra": [],
+      "note": "按类别累加与计数后计算平均。",
+      "url": "https://www.luogu.com.cn/problem/P5719",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基4.例3】分类平均",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-count",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/102",
+      "rank": 38
+    },
+    {
+      "key": "intro-while:P5720",
+      "node": "intro-while",
+      "pid": "P5720",
+      "extra": [],
+      "note": "不断折半并统计步数。",
+      "url": "https://www.luogu.com.cn/problem/P5720",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基4.例4】一尺之棰",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-while",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/102",
+      "rank": 39
+    },
+    {
+      "key": "intro-while:P1423",
+      "node": "intro-while",
+      "pid": "P1423",
+      "extra": [],
+      "note": "累加每一步距离直到达到目标。",
+      "url": "https://www.luogu.com.cn/problem/P1423",
+      "tags": [],
+      "difficulty": 1,
+      "title": "小玉在游泳",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-while",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/102",
+      "rank": 40
+    },
+    {
+      "key": "intro-while:B2077",
+      "node": "intro-while",
+      "pid": "B2077",
+      "extra": [],
+      "note": "按奇偶更新序列直到指定终点。",
+      "url": "https://www.luogu.com.cn/problem/B2077",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "角谷猜想",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-while",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 41
+    },
+    {
+      "key": "intro-nested:P5721",
+      "node": "intro-nested",
+      "pid": "P5721",
+      "extra": [],
+      "note": "用两层循环输出数字直角三角形。",
+      "url": "https://www.luogu.com.cn/problem/P5721",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基4.例6】数字直角三角形",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/102",
+      "rank": 42
+    },
+    {
+      "key": "intro-nested:P5725",
+      "node": "intro-nested",
+      "pid": "P5725",
+      "extra": [],
+      "note": "比较不同的三角形行列边界。",
+      "url": "https://www.luogu.com.cn/problem/P5725",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基4.习8】求三角形",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/102",
+      "rank": 43
+    },
+    {
+      "key": "intro-nested:B2083",
+      "node": "intro-nested",
+      "pid": "B2083",
+      "extra": [],
+      "note": "依据行列位置绘制矩形边框或实心矩形。",
+      "url": "https://www.luogu.com.cn/problem/B2083",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "画矩形",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 44
+    },
+    {
+      "key": "intro-arrays:P1427",
+      "node": "intro-arrays",
+      "pid": "P1427",
+      "extra": [],
+      "note": "读完序列后反向输出。",
+      "url": "https://www.luogu.com.cn/problem/P1427",
+      "tags": [
+        287
+      ],
+      "difficulty": 1,
+      "title": "小鱼的数字游戏",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/103",
+      "rank": 45
+    },
+    {
+      "key": "intro-arrays:B2089",
+      "node": "intro-arrays",
+      "pid": "B2089",
+      "extra": [],
+      "note": "按目标下标把元素逆序保存。",
+      "url": "https://www.luogu.com.cn/problem/B2089",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "数组逆序重存放",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 46
+    },
+    {
+      "key": "intro-arrays:B2093",
+      "node": "intro-arrays",
+      "pid": "B2093",
+      "extra": [],
+      "note": "遍历数组并记录指定值的位置。",
+      "url": "https://www.luogu.com.cn/problem/B2093",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "查找特定的值",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 47
+    },
+    {
+      "key": "intro-frequency:B2087",
+      "node": "intro-frequency",
+      "pid": "B2087",
+      "extra": [],
+      "note": "统计与指定数相同的元素个数。",
+      "url": "https://www.luogu.com.cn/problem/B2087",
+      "tags": [
+        354,
+        355,
+        356
+      ],
+      "difficulty": 1,
+      "title": "与指定数字相同的数的个数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 48
+    },
+    {
+      "key": "intro-frequency:B2096",
+      "node": "intro-frequency",
+      "pid": "B2096",
+      "extra": [],
+      "note": "为多个不同数值输出出现频次。",
+      "url": "https://www.luogu.com.cn/problem/B2096",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "直方图",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 49
+    },
+    {
+      "key": "intro-frequency:B2098",
+      "node": "intro-frequency",
+      "pid": "B2098",
+      "extra": [],
+      "note": "在保持首次出现顺序的前提下去重。",
+      "url": "https://www.luogu.com.cn/problem/B2098",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "整数去重",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 50
+    },
+    {
+      "key": "intro-runs:P1420",
+      "node": "intro-runs",
+      "pid": "P1420",
+      "extra": [],
+      "note": "发现不再连续的位置并重置长度。",
+      "url": "https://www.luogu.com.cn/problem/P1420",
+      "tags": [
+        1
+      ],
+      "difficulty": 1,
+      "title": "最长连号",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-runs",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/102",
+      "rank": 51
+    },
+    {
+      "key": "intro-runs:B2097",
+      "node": "intro-runs",
+      "pid": "B2097",
+      "extra": [],
+      "note": "维护连续相同元素形成的平台。",
+      "url": "https://www.luogu.com.cn/problem/B2097",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "最长平台",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-runs",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 52
+    },
+    {
+      "key": "intro-runs:B2126",
+      "node": "intro-runs",
+      "pid": "B2126",
+      "extra": [],
+      "note": "从相邻字符切换时更新连续长度。",
+      "url": "https://www.luogu.com.cn/problem/B2126",
+      "tags": [
+        357
+      ],
+      "difficulty": 1,
+      "title": "连续出现的字符",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-runs",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 53
+    },
+    {
+      "key": "intro-matrix:B2101",
+      "node": "intro-matrix",
+      "pid": "B2101",
+      "extra": [],
+      "note": "用行列条件识别矩阵边缘。",
+      "url": "https://www.luogu.com.cn/problem/B2101",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "计算矩阵边缘元素之和",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-matrix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 54
+    },
+    {
+      "key": "intro-matrix:B2104",
+      "node": "intro-matrix",
+      "pid": "B2104",
+      "extra": [],
+      "note": "对齐两个矩阵的同行同列元素。",
+      "url": "https://www.luogu.com.cn/problem/B2104",
+      "tags": [
+        71,
+        356
+      ],
+      "difficulty": 1,
+      "title": "矩阵加法",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-matrix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 55
+    },
+    {
+      "key": "intro-matrix:B2106",
+      "node": "intro-matrix",
+      "pid": "B2106",
+      "extra": [],
+      "note": "将原矩阵的行列坐标交换。",
+      "url": "https://www.luogu.com.cn/problem/B2106",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "矩阵转置",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-matrix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 56
+    },
+    {
+      "key": "intro-grid:B2100",
+      "node": "intro-grid",
+      "pid": "B2100",
+      "extra": [],
+      "note": "根据中心坐标列出同一行、列和对角线。",
+      "url": "https://www.luogu.com.cn/problem/B2100",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "同行列对角线的格",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-grid",
+        "intro-matrix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 57
+    },
+    {
+      "key": "intro-grid:B2108",
+      "node": "intro-grid",
+      "pid": "B2108",
+      "extra": [],
+      "note": "计算原图中的相邻像素并把结果写入新图。",
+      "url": "https://www.luogu.com.cn/problem/B2108",
+      "tags": [
+        356
+      ],
+      "difficulty": 1,
+      "title": "图像模糊处理",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-grid",
+        "intro-matrix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 58
+    },
+    {
+      "key": "intro-grid:P1789",
+      "node": "intro-grid",
+      "pid": "P1789",
+      "extra": [],
+      "note": "对每个光源标记有效覆盖坐标。",
+      "url": "https://www.luogu.com.cn/problem/P1789",
+      "tags": [
+        1,
+        81
+      ],
+      "difficulty": 2,
+      "title": "【Mc生存】插火把",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-grid",
+        "intro-matrix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/103",
+      "rank": 59
+    },
+    {
+      "key": "intro-char:B2017",
+      "node": "intro-char",
+      "pid": "B2017",
+      "extra": [],
+      "note": "观察字符转换为整数后的编码。",
+      "url": "https://www.luogu.com.cn/problem/B2017",
+      "tags": [
+        353
+      ],
+      "difficulty": 1,
+      "title": "打印 ASCII 码",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 60
+    },
+    {
+      "key": "intro-char:P5704",
+      "node": "intro-char",
+      "pid": "P5704",
+      "extra": [],
+      "note": "将小写字母转换为对应大写。",
+      "url": "https://www.luogu.com.cn/problem/P5704",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基2.例6】字母转换",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/100",
+      "rank": 61
+    },
+    {
+      "key": "intro-char:P5733",
+      "node": "intro-char",
+      "pid": "P5733",
+      "extra": [],
+      "note": "逐个字符进行大小写修正。",
+      "url": "https://www.luogu.com.cn/problem/P5733",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基6.例1】自动修正",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/104",
+      "rank": 62
+    },
+    {
+      "key": "intro-string:B2109",
+      "node": "intro-string",
+      "pid": "B2109",
+      "extra": [],
+      "note": "逐个字符统计数字字符。",
+      "url": "https://www.luogu.com.cn/problem/B2109",
+      "tags": [
+        357
+      ],
+      "difficulty": 1,
+      "title": "统计数字字符个数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 63
+    },
+    {
+      "key": "intro-string:B2118",
+      "node": "intro-string",
+      "pid": "B2118",
+      "extra": [],
+      "note": "判定一个字符串是不是另一个的子串。",
+      "url": "https://www.luogu.com.cn/problem/B2118",
+      "tags": [
+        357
+      ],
+      "difficulty": 1,
+      "title": "验证子串",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 64
+    },
+    {
+      "key": "intro-string:B2119",
+      "node": "intro-string",
+      "pid": "B2119",
+      "extra": [],
+      "note": "识别并删除匹配的单词后缀。",
+      "url": "https://www.luogu.com.cn/problem/B2119",
+      "tags": [
+        357
+      ],
+      "difficulty": 1,
+      "title": "删除单词后缀",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 65
+    },
+    {
+      "key": "intro-tokens:B2120",
+      "node": "intro-tokens",
+      "pid": "B2120",
+      "extra": [],
+      "note": "将文本拆成单词并统计各自长度。",
+      "url": "https://www.luogu.com.cn/problem/B2120",
+      "tags": [
+        357
+      ],
+      "difficulty": 1,
+      "title": "单词的长度",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-tokens",
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 66
+    },
+    {
+      "key": "intro-tokens:B2121",
+      "node": "intro-tokens",
+      "pid": "B2121",
+      "extra": [],
+      "note": "维护本词起始位置与最长、最短单词。",
+      "url": "https://www.luogu.com.cn/problem/B2121",
+      "tags": [
+        357
+      ],
+      "difficulty": 1,
+      "title": "最长最短单词",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-tokens",
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 67
+    },
+    {
+      "key": "intro-tokens:B3640",
+      "node": "intro-tokens",
+      "pid": "B3640",
+      "extra": [],
+      "note": "逐词处理一整行句子。",
+      "url": "https://www.luogu.com.cn/problem/B3640",
+      "tags": [
+        357
+      ],
+      "difficulty": 2,
+      "title": "T3 句子反转",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-tokens",
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 68
+    },
+    {
+      "key": "intro-mirror:B2124",
+      "node": "intro-mirror",
+      "pid": "B2124",
+      "extra": [],
+      "note": "使用首尾指针判断字符串回文。",
+      "url": "https://www.luogu.com.cn/problem/B2124",
+      "tags": [
+        357
+      ],
+      "difficulty": 1,
+      "title": "判断字符串是否为回文",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-mirror",
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators",
+        "intro-runs",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 69
+    },
+    {
+      "key": "intro-mirror:B2122",
+      "node": "intro-mirror",
+      "pid": "B2122",
+      "extra": [],
+      "note": "反转每个单词内部字符。",
+      "url": "https://www.luogu.com.cn/problem/B2122",
+      "tags": [
+        357
+      ],
+      "difficulty": 1,
+      "title": "单词翻转",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-mirror",
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators",
+        "intro-runs",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 70
+    },
+    {
+      "key": "intro-mirror:B2136",
+      "node": "intro-mirror",
+      "pid": "B2136",
+      "extra": [],
+      "note": "结合整数反转与首尾匹配判断。",
+      "url": "https://www.luogu.com.cn/problem/B2136",
+      "tags": [
+        359
+      ],
+      "difficulty": 1,
+      "title": "素数回文数的个数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-mirror",
+        "intro-string",
+        "intro-char",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators",
+        "intro-runs",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 71
+    },
+    {
+      "key": "intro-func:B2129",
+      "node": "intro-func",
+      "pid": "B2129",
+      "extra": [],
+      "note": "把取最大值封装成可复用函数。",
+      "url": "https://www.luogu.com.cn/problem/B2129",
+      "tags": [
+        359
+      ],
+      "difficulty": 1,
+      "title": "最大数 max(x,y,z)",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 72
+    },
+    {
+      "key": "intro-func:P5735",
+      "node": "intro-func",
+      "pid": "P5735",
+      "extra": [
+        "intro-decimals"
+      ],
+      "note": "复用两点间距离函数。",
+      "url": "https://www.luogu.com.cn/problem/P5735",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基7.例1】距离函数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-decimals",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/105",
+      "rank": 73
+    },
+    {
+      "key": "intro-func:P5737",
+      "node": "intro-func",
+      "pid": "P5737",
+      "extra": [],
+      "note": "通过函数复用闰年判断。",
+      "url": "https://www.luogu.com.cn/problem/P5737",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基7.例3】闰年展示",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/105",
+      "rank": 74
+    },
+    {
+      "key": "intro-records:P5744",
+      "node": "intro-records",
+      "pid": "P5744",
+      "extra": [],
+      "note": "根据记录更新指定字段。",
+      "url": "https://www.luogu.com.cn/problem/P5744",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基7.习9】培训",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-records",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/105",
+      "rank": 75
+    },
+    {
+      "key": "intro-records:P5740",
+      "node": "intro-records",
+      "pid": "P5740",
+      "extra": [],
+      "note": "维护学生姓名、各科成绩和总分。",
+      "url": "https://www.luogu.com.cn/problem/P5740",
+      "tags": [],
+      "difficulty": 2,
+      "title": "【深基7.例9】最厉害的学生",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-records",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/105",
+      "rank": 76
+    },
+    {
+      "key": "intro-records:P5742",
+      "node": "intro-records",
+      "pid": "P5742",
+      "extra": [],
+      "note": "把评分规则封装为记录方法或函数。",
+      "url": "https://www.luogu.com.cn/problem/P5742",
+      "tags": [],
+      "difficulty": 2,
+      "title": "【深基7.例11】评等级",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-records",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-arrays",
+        "intro-for",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/105",
+      "rank": 77
+    },
+    {
+      "key": "intro-simulate:B2067",
+      "node": "intro-simulate",
+      "pid": "B2067",
+      "extra": [],
+      "note": "模拟药品逐次售出与库存不足。",
+      "url": "https://www.luogu.com.cn/problem/B2067",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "药房管理",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-simulate",
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types",
+        "intro-while",
+        "intro-for",
+        "intro-arrays"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 78
+    },
+    {
+      "key": "intro-simulate:P5727",
+      "node": "intro-simulate",
+      "pid": "P5727",
+      "extra": [],
+      "note": "记录并按要求输出递变状态。",
+      "url": "https://www.luogu.com.cn/problem/P5727",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基5.例3】冰雹猜想",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-simulate",
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types",
+        "intro-while",
+        "intro-for",
+        "intro-arrays"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/103",
+      "rank": 79
+    },
+    {
+      "key": "intro-simulate:P5734",
+      "node": "intro-simulate",
+      "pid": "P5734",
+      "extra": [],
+      "note": "逐条执行字符串编辑指令。",
+      "url": "https://www.luogu.com.cn/problem/P5734",
+      "tags": [
+        2
+      ],
+      "difficulty": 2,
+      "title": "【深基6.例6】文字处理软件",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-simulate",
+        "intro-branches",
+        "intro-logic",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-division",
+        "intro-operators",
+        "intro-decimals",
+        "intro-types",
+        "intro-while",
+        "intro-for",
+        "intro-arrays"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/104",
+      "rank": 80
+    },
+    {
+      "key": "intro-vector:P3156",
+      "node": "intro-vector",
+      "pid": "P3156",
+      "extra": [],
+      "note": "利用下标处理多个学号查询。",
+      "url": "https://www.luogu.com.cn/problem/P3156",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基15.例1】询问学号",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/113",
+      "rank": 81
+    },
+    {
+      "key": "intro-vector:P3613",
+      "node": "intro-vector",
+      "pid": "P3613",
+      "extra": [],
+      "note": "按包柜与格口组织稀疏记录。",
+      "url": "https://www.luogu.com.cn/problem/P3613",
+      "tags": [
+        504
+      ],
+      "difficulty": 2,
+      "title": "【深基15.例2】寄包柜",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/113",
+      "rank": 82
+    },
+    {
+      "key": "intro-enumerate:B2086",
+      "node": "intro-enumerate",
+      "pid": "B2086",
+      "extra": [],
+      "note": "枚举未知量并用方程筛选。",
+      "url": "https://www.luogu.com.cn/problem/B2086",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "不定方程求解",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 83
+    },
+    {
+      "key": "intro-enumerate:B2133",
+      "node": "intro-enumerate",
+      "pid": "B2133",
+      "extra": [],
+      "note": "比较每个候选门牌号是否符合规则。",
+      "url": "https://www.luogu.com.cn/problem/B2133",
+      "tags": [
+        359
+      ],
+      "difficulty": 1,
+      "title": "我家的门牌号",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 84
+    },
+    {
+      "key": "intro-enumerate:B3621",
+      "node": "intro-enumerate",
+      "pid": "B3621",
+      "extra": [],
+      "note": "系统构造并检查多变量元组。",
+      "url": "https://www.luogu.com.cn/problem/B3621",
+      "tags": [
+        127,
+        244
+      ],
+      "difficulty": 2,
+      "title": "枚举元组",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 85
+    },
+    {
+      "key": "intro-complexity:P1428",
+      "node": "intro-complexity",
+      "pid": "P1428",
+      "extra": [],
+      "note": "估计逐个比较前方元素的次数。",
+      "url": "https://www.luogu.com.cn/problem/P1428",
+      "tags": [
+        1
+      ],
+      "difficulty": 1,
+      "title": "小鱼比可爱",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-arrays"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/103",
+      "rank": 86
+    },
+    {
+      "key": "intro-complexity:P5728",
+      "node": "intro-complexity",
+      "pid": "P5728",
+      "extra": [],
+      "note": "分析为什么按无序对枚举只需检查一半组合。",
+      "url": "https://www.luogu.com.cn/problem/P5728",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基5.例5】旗鼓相当的对手",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-arrays"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/103",
+      "rank": 87
+    },
+    {
+      "key": "intro-recursion:B2142",
+      "node": "intro-recursion",
+      "pid": "B2142",
+      "extra": [],
+      "note": "把求和拆为当前项与较小范围的和。",
+      "url": "https://www.luogu.com.cn/problem/B2142",
+      "tags": [
+        359
+      ],
+      "difficulty": 1,
+      "title": "求 1+2+3+...+N 的值",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 88
+    },
+    {
+      "key": "intro-recursion:P5739",
+      "node": "intro-recursion",
+      "pid": "P5739",
+      "extra": [],
+      "note": "使用阶乘递推式写递归函数。",
+      "url": "https://www.luogu.com.cn/problem/P5739",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基7.例7】计算阶乘",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/105",
+      "rank": 89
+    },
+    {
+      "key": "intro-recursion:P1928",
+      "node": "intro-recursion",
+      "pid": "P1928",
+      "extra": [],
+      "note": "识别嵌套片段并按层展开。",
+      "url": "https://www.luogu.com.cn/problem/P1928",
+      "tags": [
+        1,
+        2,
+        54,
+        112
+      ],
+      "difficulty": 3,
+      "title": "外星密码",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/109",
+      "rank": 90
+    },
+    {
+      "key": "intro-recurrence:B2064",
+      "node": "intro-recurrence",
+      "pid": "B2064",
+      "extra": [],
+      "note": "按初值和前两项之和递推。",
+      "url": "https://www.luogu.com.cn/problem/B2064",
+      "tags": [
+        355
+      ],
+      "difficulty": 1,
+      "title": "斐波那契数列",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-recurrence",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 91
+    },
+    {
+      "key": "intro-recurrence:P5743",
+      "node": "intro-recurrence",
+      "pid": "P5743",
+      "extra": [],
+      "note": "反向推导前一天的桃子数量。",
+      "url": "https://www.luogu.com.cn/problem/P5743",
+      "tags": [],
+      "difficulty": 1,
+      "title": "【深基7.习8】猴子吃桃",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-recurrence",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/105",
+      "rank": 92
+    },
+    {
+      "key": "intro-recurrence:P1990",
+      "node": "intro-recurrence",
+      "pid": "P1990",
+      "extra": [],
+      "note": "按末端的填充状态推导铺砖方案数。",
+      "url": "https://www.luogu.com.cn/problem/P1990",
+      "tags": [
+        12
+      ],
+      "difficulty": 3,
+      "title": "覆盖墙壁",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-recurrence",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/109",
+      "rank": 93
+    },
+    {
+      "key": "intro-permutation:P1706",
+      "node": "intro-permutation",
+      "pid": "P1706",
+      "extra": [],
+      "note": "输出 1 到 n 的所有排列。",
+      "url": "https://www.luogu.com.cn/problem/P1706",
+      "tags": [
+        4,
+        5,
+        54,
+        127
+      ],
+      "difficulty": 2,
+      "title": "全排列问题",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-permutation",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/108",
+      "rank": 94
+    },
+    {
+      "key": "intro-permutation:B3623",
+      "node": "intro-permutation",
+      "pid": "B3623",
+      "extra": [],
+      "note": "按编号递归产生各位置的元素。",
+      "url": "https://www.luogu.com.cn/problem/B3623",
+      "tags": [
+        127
+      ],
+      "difficulty": 2,
+      "title": "枚举排列（递归实现排列型枚举）",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-permutation",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 95
+    },
+    {
+      "key": "intro-permutation:P1618",
+      "node": "intro-permutation",
+      "pid": "P1618",
+      "extra": [],
+      "note": "用排列或选位枚举生成符合题意的三个数。",
+      "url": "https://www.luogu.com.cn/problem/P1618",
+      "tags": [
+        1,
+        111
+      ],
+      "difficulty": 2,
+      "title": "三连击（升级版）",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-permutation",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/108",
+      "rank": 96
+    },
+    {
+      "key": "intro-subset:B3622",
+      "node": "intro-subset",
+      "pid": "B3622",
+      "extra": [],
+      "note": "用二叉选择递归覆盖空集及全集。",
+      "url": "https://www.luogu.com.cn/problem/B3622",
+      "tags": [
+        127
+      ],
+      "difficulty": 2,
+      "title": "枚举子集（递归实现指数型枚举）",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-subset",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 97
+    },
+    {
+      "key": "intro-subset:P1157",
+      "node": "intro-subset",
+      "pid": "P1157",
+      "extra": [],
+      "note": "用递增下标保证选出的组合无重复。",
+      "url": "https://www.luogu.com.cn/problem/P1157",
+      "tags": [
+        4,
+        54,
+        127,
+        253
+      ],
+      "difficulty": 2,
+      "title": "组合的输出",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-subset",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/108",
+      "rank": 98
+    },
+    {
+      "key": "intro-subset:P2089",
+      "node": "intro-subset",
+      "pid": "P2089",
+      "extra": [],
+      "note": "在选择配方时约束各项用量和总和。",
+      "url": "https://www.luogu.com.cn/problem/P2089",
+      "tags": [
+        4,
+        54,
+        81,
+        111
+      ],
+      "difficulty": 2,
+      "title": "烤鸡",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-subset",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/108",
+      "rank": 99
+    },
+    {
+      "key": "intro-sort:P1152",
+      "node": "intro-sort",
+      "pid": "P1152",
+      "extra": [],
+      "note": "排序相邻差值以检查它们组成的范围。",
+      "url": "https://www.luogu.com.cn/problem/P1152",
+      "tags": [
+        1,
+        111,
+        113
+      ],
+      "difficulty": 1,
+      "title": "欢乐的跳",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/107",
+      "rank": 100
+    },
+    {
+      "key": "intro-sort:P1271",
+      "node": "intro-sort",
+      "pid": "P1271",
+      "extra": [],
+      "note": "用排序或频数表恢复票号顺序。",
+      "url": "https://www.luogu.com.cn/problem/P1271",
+      "tags": [
+        113
+      ],
+      "difficulty": 2,
+      "title": "【深基9.例1】选举学生会",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/107",
+      "rank": 101
+    },
+    {
+      "key": "intro-sort:P1177",
+      "node": "intro-sort",
+      "pid": "P1177",
+      "extra": [],
+      "note": "对整数序列排序并验证大规模输入。",
+      "url": "https://www.luogu.com.cn/problem/P1177",
+      "tags": [
+        113,
+        523
+      ],
+      "difficulty": 2,
+      "title": "【模板】排序",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/107",
+      "rank": 102
+    },
+    {
+      "key": "intro-sort-record:B2158",
+      "node": "intro-sort-record",
+      "pid": "B2158",
+      "extra": [],
+      "note": "将分数和对应姓名一同保留并找出第 k 名。",
+      "url": "https://www.luogu.com.cn/problem/B2158",
+      "tags": [
+        113,
+        358
+      ],
+      "difficulty": 1,
+      "title": "谁考了第 k 名",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-sort-record",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-records",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 103
+    },
+    {
+      "key": "intro-sort-record:P1104",
+      "node": "intro-sort-record",
+      "pid": "P1104",
+      "extra": [],
+      "note": "按生日及题意的同日规则排序。",
+      "url": "https://www.luogu.com.cn/problem/P1104",
+      "tags": [
+        1,
+        2,
+        113
+      ],
+      "difficulty": 2,
+      "title": "生日",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-sort-record",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-records",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/107",
+      "rank": 104
+    },
+    {
+      "key": "intro-sort-record:P1781",
+      "node": "intro-sort-record",
+      "pid": "P1781",
+      "extra": [],
+      "note": "按位数与字典序比较大整数。",
+      "url": "https://www.luogu.com.cn/problem/P1781",
+      "tags": [
+        2,
+        10,
+        81,
+        113
+      ],
+      "difficulty": 2,
+      "title": "宇宙总统",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-sort-record",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-records",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/107",
+      "rank": 105
+    },
+    {
+      "key": "intro-prefix:P1614",
+      "node": "intro-prefix",
+      "pid": "P1614",
+      "extra": [],
+      "note": "用连续窗口或前缀和求固定长度区间的最小和。",
+      "url": "https://www.luogu.com.cn/problem/P1614",
+      "tags": [
+        1,
+        7,
+        81,
+        111,
+        254
+      ],
+      "difficulty": 1,
+      "title": "爱与愁的心痛",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-prefix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/103",
+      "rank": 106
+    },
+    {
+      "key": "intro-prefix:B3612",
+      "node": "intro-prefix",
+      "pid": "B3612",
+      "extra": [],
+      "note": "先预处理再回答多组区间求和。",
+      "url": "https://www.luogu.com.cn/problem/B3612",
+      "tags": [
+        108,
+        254
+      ],
+      "difficulty": 2,
+      "title": "【深进1.例1】求区间和",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-prefix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 107
+    },
+    {
+      "key": "intro-prefix:P1147",
+      "node": "intro-prefix",
+      "pid": "P1147",
+      "extra": [],
+      "note": "用前缀和表达连续整数的和。",
+      "url": "https://www.luogu.com.cn/problem/P1147",
+      "tags": [
+        5,
+        45,
+        111,
+        254,
+        345
+      ],
+      "difficulty": 2,
+      "title": "连续正整数和",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-prefix",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷题库",
+      "sourceUrl": "https://www.luogu.com.cn/problem/P1147",
+      "rank": 108
+    },
+    {
+      "key": "intro-binary:P2249",
+      "node": "intro-binary",
+      "pid": "P2249",
+      "extra": [],
+      "note": "寻找指定数第一次出现的位置。",
+      "url": "https://www.luogu.com.cn/problem/P2249",
+      "tags": [
+        45
+      ],
+      "difficulty": 2,
+      "title": "【深基13.例1】查找",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-binary",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/111",
+      "rank": 109
+    },
+    {
+      "key": "intro-binary:P1678",
+      "node": "intro-binary",
+      "pid": "P1678",
+      "extra": [],
+      "note": "用下界取出相邻的两个候选值。",
+      "url": "https://www.luogu.com.cn/problem/P1678",
+      "tags": [
+        1,
+        7,
+        45,
+        113
+      ],
+      "difficulty": 2,
+      "title": "烦恼的高考志愿",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-binary",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/111",
+      "rank": 110
+    },
+    {
+      "key": "intro-binary-answer:B3627",
+      "node": "intro-binary-answer",
+      "pid": "B3627",
+      "extra": [],
+      "note": "给实数三次方设置单调判定和精度。",
+      "url": "https://www.luogu.com.cn/problem/B3627",
+      "tags": [
+        45,
+        111
+      ],
+      "difficulty": 2,
+      "title": "立方根",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-binary-answer",
+        "intro-binary",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 111
+    },
+    {
+      "key": "intro-binary-answer:P2440",
+      "node": "intro-binary-answer",
+      "pid": "P2440",
+      "extra": [],
+      "note": "根据给定切割长度计算可切木材数。",
+      "url": "https://www.luogu.com.cn/problem/P2440",
+      "tags": [
+        7,
+        45
+      ],
+      "difficulty": 3,
+      "title": "木材加工",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-binary-answer",
+        "intro-binary",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/111",
+      "rank": 112
+    },
+    {
+      "key": "intro-greedy:P1478",
+      "node": "intro-greedy",
+      "pid": "P1478",
+      "extra": [],
+      "note": "按消耗体力排序选择可摘的苹果。",
+      "url": "https://www.luogu.com.cn/problem/P1478",
+      "tags": [
+        7,
+        81,
+        113,
+        139
+      ],
+      "difficulty": 2,
+      "title": "陶陶摘苹果（升级版）",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-greedy",
+        "intro-sort-record",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-records",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/110",
+      "rank": 113
+    },
+    {
+      "key": "intro-greedy:P1223",
+      "node": "intro-greedy",
+      "pid": "P1223",
+      "extra": [],
+      "note": "按服务时间从短到长安排队列。",
+      "url": "https://www.luogu.com.cn/problem/P1223",
+      "tags": [
+        7,
+        113
+      ],
+      "difficulty": 2,
+      "title": "排队接水",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-greedy",
+        "intro-sort-record",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-records",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/110",
+      "rank": 114
+    },
+    {
+      "key": "intro-greedy:P1803",
+      "node": "intro-greedy",
+      "pid": "P1803",
+      "extra": [],
+      "note": "按结束时间选择互不重叠的区间。",
+      "url": "https://www.luogu.com.cn/problem/P1803",
+      "tags": [
+        1,
+        7,
+        113
+      ],
+      "difficulty": 2,
+      "title": "凌乱的yyy / 线段覆盖",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-greedy",
+        "intro-sort-record",
+        "intro-sort",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-records",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/110",
+      "rank": 115
+    },
+    {
+      "key": "intro-set:B3632",
+      "node": "intro-set",
+      "pid": "B3632",
+      "extra": [],
+      "note": "计算两个集合的基本运算。",
+      "url": "https://www.luogu.com.cn/problem/B3632",
+      "tags": [
+        5
+      ],
+      "difficulty": 2,
+      "title": "集合运算 1",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-set",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-sort",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 116
+    },
+    {
+      "key": "intro-set:B3633",
+      "node": "intro-set",
+      "pid": "B3633",
+      "extra": [],
+      "note": "综合使用集合运算与查询。",
+      "url": "https://www.luogu.com.cn/problem/B3633",
+      "tags": [
+        1,
+        5
+      ],
+      "difficulty": 3,
+      "title": "集合运算 2",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-set",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-sort",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 117
+    },
+    {
+      "key": "intro-map:P1918",
+      "node": "intro-map",
+      "pid": "P1918",
+      "extra": [],
+      "note": "构造球瓶数到编号的映射进行查询。",
+      "url": "https://www.luogu.com.cn/problem/P1918",
+      "tags": [
+        1,
+        45,
+        504
+      ],
+      "difficulty": 2,
+      "title": "保龄球",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-map",
+        "intro-set",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-sort",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-string",
+        "intro-char",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/115",
+      "rank": 118
+    },
+    {
+      "key": "intro-map:P5266",
+      "node": "intro-map",
+      "pid": "P5266",
+      "extra": [],
+      "note": "处理学籍的插入、查询与删除。",
+      "url": "https://www.luogu.com.cn/problem/P5266",
+      "tags": [
+        1,
+        300,
+        473,
+        504
+      ],
+      "difficulty": 3,
+      "title": "【深基17.例6】学籍管理",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-map",
+        "intro-set",
+        "intro-frequency",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-sort",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-string",
+        "intro-char",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/115",
+      "rank": 119
+    },
+    {
+      "key": "intro-stack:P1739",
+      "node": "intro-stack",
+      "pid": "P1739",
+      "extra": [],
+      "note": "扫描表达式中的左、右括号。",
+      "url": "https://www.luogu.com.cn/problem/P1739",
+      "tags": [
+        1,
+        2,
+        44,
+        287
+      ],
+      "difficulty": 1,
+      "title": "表达式括号匹配",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-stack",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-string",
+        "intro-char",
+        "intro-types"
+      ],
+      "source": "洛谷题库",
+      "sourceUrl": "https://www.luogu.com.cn/problem/P1739",
+      "rank": 120
+    },
+    {
+      "key": "intro-stack:B3614",
+      "node": "intro-stack",
+      "pid": "B3614",
+      "extra": [],
+      "note": "按照操作指令维护栈状态。",
+      "url": "https://www.luogu.com.cn/problem/B3614",
+      "tags": [
+        108,
+        287,
+        523
+      ],
+      "difficulty": 2,
+      "title": "【模板】栈",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-stack",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-string",
+        "intro-char",
+        "intro-types"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 121
+    },
+    {
+      "key": "intro-stack:P1241",
+      "node": "intro-stack",
+      "pid": "P1241",
+      "extra": [],
+      "note": "记录括号配对并补齐未配对的括号。",
+      "url": "https://www.luogu.com.cn/problem/P1241",
+      "tags": [
+        108,
+        287
+      ],
+      "difficulty": 2,
+      "title": "括号序列",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-stack",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-string",
+        "intro-char",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/113",
+      "rank": 122
+    },
+    {
+      "key": "intro-queue:B3616",
+      "node": "intro-queue",
+      "pid": "B3616",
+      "extra": [],
+      "note": "练习队列的几种基本操作。",
+      "url": "https://www.luogu.com.cn/problem/B3616",
+      "tags": [
+        288,
+        523
+      ],
+      "difficulty": 2,
+      "title": "【模板】队列",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-queue",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-simulate",
+        "intro-branches",
+        "intro-logic",
+        "intro-division",
+        "intro-decimals",
+        "intro-types",
+        "intro-while"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 123
+    },
+    {
+      "key": "intro-queue:P1996",
+      "node": "intro-queue",
+      "pid": "P1996",
+      "extra": [],
+      "note": "模拟循环报数和出队。",
+      "url": "https://www.luogu.com.cn/problem/P1996",
+      "tags": [
+        1,
+        53,
+        288,
+        360
+      ],
+      "difficulty": 2,
+      "title": "约瑟夫问题",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-queue",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-simulate",
+        "intro-branches",
+        "intro-logic",
+        "intro-division",
+        "intro-decimals",
+        "intro-types",
+        "intro-while"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/113",
+      "rank": 124
+    },
+    {
+      "key": "intro-graph:B3643",
+      "node": "intro-graph",
+      "pid": "B3643",
+      "extra": [],
+      "note": "同时用邻接矩阵和邻接表输出无向图。",
+      "url": "https://www.luogu.com.cn/problem/B3643",
+      "tags": [
+        6
+      ],
+      "difficulty": 2,
+      "title": "图的存储",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-graph",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-sort",
+        "intro-frequency",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 125
+    },
+    {
+      "key": "intro-graph:B3613",
+      "node": "intro-graph",
+      "pid": "B3613",
+      "extra": [],
+      "note": "存储每个顶点的出边并输出排序结果。",
+      "url": "https://www.luogu.com.cn/problem/B3613",
+      "tags": [
+        6,
+        108,
+        504
+      ],
+      "difficulty": 2,
+      "title": "图的存储与出边的排序",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-graph",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-sort",
+        "intro-frequency",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 126
+    },
+    {
+      "key": "intro-dfs:P1294",
+      "node": "intro-dfs",
+      "pid": "P1294",
+      "extra": [],
+      "note": "练习 DFS 枚举简单路径与回溯标记。",
+      "url": "https://www.luogu.com.cn/problem/P1294",
+      "tags": [
+        4,
+        6,
+        81,
+        127
+      ],
+      "difficulty": 2,
+      "title": "高手去散步",
+      "fullScore": 100,
+      "checkedAt": "2026-11-24",
+      "requires": [
+        "intro-dfs",
+        "intro-permutation",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-grid",
+        "intro-matrix",
+        "intro-arrays"
+      ],
+      "rank": 127,
+      "source": "洛谷题库",
+      "sourceLabel": "洛谷经典练习",
+      "sourceUrl": "https://www.luogu.com.cn/problem/P1294",
+      "sourceKind": "classic"
+    },
+    {
+      "key": "intro-dfs:P1162",
+      "node": "intro-dfs",
+      "pid": "P1162",
+      "extra": [],
+      "note": "从网格外侧找能连到边界的空白区域。",
+      "url": "https://www.luogu.com.cn/problem/P1162",
+      "tags": [
+        4,
+        81,
+        126,
+        127,
+        175,
+        288
+      ],
+      "difficulty": 2,
+      "title": "填涂颜色",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-dfs",
+        "intro-permutation",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-grid",
+        "intro-matrix",
+        "intro-arrays"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/112",
+      "rank": 128
+    },
+    {
+      "key": "intro-dfs:P4913",
+      "node": "intro-dfs",
+      "pid": "P4913",
+      "extra": [],
+      "note": "通过递归遍历计算树高。",
+      "url": "https://www.luogu.com.cn/problem/P4913",
+      "tags": [
+        4,
+        126,
+        127
+      ],
+      "difficulty": 2,
+      "title": "【深基16.例3】二叉树深度",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-dfs",
+        "intro-permutation",
+        "intro-recursion",
+        "intro-func",
+        "intro-types",
+        "intro-input",
+        "intro-output",
+        "intro-compare",
+        "intro-while",
+        "intro-for",
+        "intro-operators",
+        "intro-division",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-grid",
+        "intro-matrix",
+        "intro-arrays"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/114",
+      "rank": 129
+    },
+    {
+      "key": "intro-bfs:B3625",
+      "node": "intro-bfs",
+      "pid": "B3625",
+      "extra": [],
+      "note": "用队列判断终点是否可达。",
+      "url": "https://www.luogu.com.cn/problem/B3625",
+      "tags": [
+        126,
+        127,
+        158
+      ],
+      "difficulty": 2,
+      "title": "迷宫寻路",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-bfs",
+        "intro-queue",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-simulate",
+        "intro-branches",
+        "intro-logic",
+        "intro-division",
+        "intro-decimals",
+        "intro-types",
+        "intro-while",
+        "intro-grid",
+        "intro-matrix",
+        "intro-nested",
+        "intro-count"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 130
+    },
+    {
+      "key": "intro-bfs:P1443",
+      "node": "intro-bfs",
+      "pid": "P1443",
+      "extra": [],
+      "note": "用队列处理马的八种移动方式。",
+      "url": "https://www.luogu.com.cn/problem/P1443",
+      "tags": [
+        4,
+        107,
+        126,
+        288
+      ],
+      "difficulty": 2,
+      "title": "马的遍历",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-bfs",
+        "intro-queue",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-simulate",
+        "intro-branches",
+        "intro-logic",
+        "intro-division",
+        "intro-decimals",
+        "intro-types",
+        "intro-while",
+        "intro-grid",
+        "intro-matrix",
+        "intro-nested",
+        "intro-count"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/112",
+      "rank": 131
+    },
+    {
+      "key": "intro-bfs:P1135",
+      "node": "intro-bfs",
+      "pid": "P1135",
+      "extra": [],
+      "note": "把楼层作为状态寻找最少按键次数。",
+      "url": "https://www.luogu.com.cn/problem/P1135",
+      "tags": [
+        1,
+        126,
+        127,
+        160
+      ],
+      "difficulty": 3,
+      "title": "奇怪的电梯",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-bfs",
+        "intro-queue",
+        "intro-vector",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-simulate",
+        "intro-branches",
+        "intro-logic",
+        "intro-division",
+        "intro-decimals",
+        "intro-types",
+        "intro-while",
+        "intro-grid",
+        "intro-matrix",
+        "intro-nested",
+        "intro-count"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/112",
+      "rank": 132
+    },
+    {
+      "key": "intro-gcd:P1888",
+      "node": "intro-gcd",
+      "pid": "P1888",
+      "extra": [],
+      "note": "将两个边长约成最简比例。",
+      "url": "https://www.luogu.com.cn/problem/P1888",
+      "tags": [
+        5,
+        113,
+        241
+      ],
+      "difficulty": 1,
+      "title": "三角函数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-gcd",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output",
+        "intro-while",
+        "intro-for",
+        "intro-compare",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/101",
+      "rank": 133
+    },
+    {
+      "key": "intro-gcd:B3634",
+      "node": "intro-gcd",
+      "pid": "B3634",
+      "extra": [],
+      "note": "同时计算最大公约数与最小公倍数。",
+      "url": "https://www.luogu.com.cn/problem/B3634",
+      "tags": [
+        5,
+        241
+      ],
+      "difficulty": 2,
+      "title": "最大公约数和最小公倍数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-gcd",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output",
+        "intro-while",
+        "intro-for",
+        "intro-compare",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 134
+    },
+    {
+      "key": "intro-gcd:P1572",
+      "node": "intro-gcd",
+      "pid": "P1572",
+      "extra": [],
+      "note": "用公约数化简分数算式的结果。",
+      "url": "https://www.luogu.com.cn/problem/P1572",
+      "tags": [
+        1,
+        2,
+        81
+      ],
+      "difficulty": 2,
+      "title": "计算分数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-gcd",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output",
+        "intro-while",
+        "intro-for",
+        "intro-compare",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/117",
+      "rank": 135
+    },
+    {
+      "key": "intro-prime:B2085",
+      "node": "intro-prime",
+      "pid": "B2085",
+      "extra": [],
+      "note": "反复判断候选并统计第 n 个质数。",
+      "url": "https://www.luogu.com.cn/problem/B2085",
+      "tags": [
+        239,
+        355
+      ],
+      "difficulty": 1,
+      "title": "第 n 小的质数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-prime",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 136
+    },
+    {
+      "key": "intro-prime:P5723",
+      "node": "intro-prime",
+      "pid": "P5723",
+      "extra": [],
+      "note": "按顺序选取质数并维护总和。",
+      "url": "https://www.luogu.com.cn/problem/P5723",
+      "tags": [
+        111,
+        239
+      ],
+      "difficulty": 2,
+      "title": "【深基4.例13】质数口袋",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-prime",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/102",
+      "rank": 137
+    },
+    {
+      "key": "intro-prime:B2084",
+      "node": "intro-prime",
+      "pid": "B2084",
+      "extra": [],
+      "note": "用能整除的因子分解给定整数。",
+      "url": "https://www.luogu.com.cn/problem/B2084",
+      "tags": [
+        355
+      ],
+      "difficulty": 2,
+      "title": "质因数分解",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-prime",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-func",
+        "intro-types"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 138
+    },
+    {
+      "key": "intro-sieve:P5736",
+      "node": "intro-sieve",
+      "pid": "P5736",
+      "extra": [],
+      "note": "筛出输入涉及的小素数并保留顺序。",
+      "url": "https://www.luogu.com.cn/problem/P5736",
+      "tags": [
+        239
+      ],
+      "difficulty": 2,
+      "title": "【深基7.例2】质数筛",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-sieve",
+        "intro-prime",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-func",
+        "intro-types",
+        "intro-frequency",
+        "intro-arrays"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/105",
+      "rank": 139
+    },
+    {
+      "key": "intro-sieve:P3383",
+      "node": "intro-sieve",
+      "pid": "P3383",
+      "extra": [],
+      "note": "预处理质数后回答下标查询。",
+      "url": "https://www.luogu.com.cn/problem/P3383",
+      "tags": [
+        5,
+        72,
+        108,
+        239,
+        475,
+        523
+      ],
+      "difficulty": 2,
+      "title": "【模板】线性筛素数",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-sieve",
+        "intro-prime",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-count",
+        "intro-logic",
+        "intro-division",
+        "intro-func",
+        "intro-types",
+        "intro-frequency",
+        "intro-arrays"
+      ],
+      "source": "洛谷官方《深入浅出》",
+      "sourceUrl": "https://www.luogu.com.cn/training/117",
+      "rank": 140
+    },
+    {
+      "key": "intro-radix:B2140",
+      "node": "intro-radix",
+      "pid": "B2140",
+      "extra": [],
+      "note": "观察整数二进制表示中的 0 与 1。",
+      "url": "https://www.luogu.com.cn/problem/B2140",
+      "tags": [
+        359
+      ],
+      "difficulty": 1,
+      "title": "二进制分类",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-radix",
+        "intro-digits",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output",
+        "intro-char",
+        "intro-types",
+        "intro-compare"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 141
+    },
+    {
+      "key": "intro-radix:B3620",
+      "node": "intro-radix",
+      "pid": "B3620",
+      "extra": [],
+      "note": "将字符数位累积为十进制整数。",
+      "url": "https://www.luogu.com.cn/problem/B3620",
+      "tags": [
+        5,
+        244
+      ],
+      "difficulty": 2,
+      "title": "x 进制转 10 进制",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-radix",
+        "intro-digits",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output",
+        "intro-char",
+        "intro-types",
+        "intro-compare"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 142
+    },
+    {
+      "key": "intro-radix:B3619",
+      "node": "intro-radix",
+      "pid": "B3619",
+      "extra": [],
+      "note": "反复除基取余完成反向转换。",
+      "url": "https://www.luogu.com.cn/problem/B3619",
+      "tags": [
+        244
+      ],
+      "difficulty": 2,
+      "title": "10 进制转 x 进制",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-radix",
+        "intro-digits",
+        "intro-division",
+        "intro-operators",
+        "intro-input",
+        "intro-output",
+        "intro-char",
+        "intro-types",
+        "intro-compare"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 143
+    },
+    {
+      "key": "intro-dp:P1115",
+      "node": "intro-dp",
+      "pid": "P1115",
+      "extra": [],
+      "note": "维护以当前元素结尾的最优子段。",
+      "url": "https://www.luogu.com.cn/problem/P1115",
+      "tags": [
+        3,
+        7,
+        12,
+        112,
+        254,
+        444
+      ],
+      "difficulty": 2,
+      "title": "最大子段和",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-dp",
+        "intro-recurrence",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷题库",
+      "sourceUrl": "https://www.luogu.com.cn/problem/P1115",
+      "rank": 144
+    },
+    {
+      "key": "intro-dp:B3637",
+      "node": "intro-dp",
+      "pid": "B3637",
+      "extra": [],
+      "note": "用下标和大小关系定义以当前元素结尾的 LIS。",
+      "url": "https://www.luogu.com.cn/problem/B3637",
+      "tags": [
+        3,
+        7,
+        45
+      ],
+      "difficulty": 2,
+      "title": "最长上升子序列",
+      "checkedAt": "2026-11-21",
+      "requires": [
+        "intro-dp",
+        "intro-recurrence",
+        "intro-arrays",
+        "intro-for",
+        "intro-compare",
+        "intro-input",
+        "intro-output",
+        "intro-operators",
+        "intro-complexity",
+        "intro-enumerate",
+        "intro-nested",
+        "intro-count",
+        "intro-logic",
+        "intro-division"
+      ],
+      "source": "洛谷入门与面试",
+      "sourceUrl": "https://www.luogu.com.cn/problem/list?type=B",
+      "rank": 145
+    }
+  ],
+  "difficulties": [
+    {
+      "id": 0,
+      "name": "暂无评定",
+      "color": "#a0a6b3"
+    },
+    {
+      "id": 1,
+      "name": "入门",
+      "color": "#fe4c61"
+    },
+    {
+      "id": 2,
+      "name": "普及−",
+      "color": "#f39c11"
+    },
+    {
+      "id": 3,
+      "name": "普及",
+      "color": "#ffc116"
+    },
+    {
+      "id": 4,
+      "name": "普及+/提高−",
+      "color": "#52c41a"
+    },
+    {
+      "id": 5,
+      "name": "提高",
+      "color": "#13c2c2"
+    },
+    {
+      "id": 6,
+      "name": "提高+/省选−",
+      "color": "#3498db"
+    },
+    {
+      "id": 7,
+      "name": "省选/NOI−",
+      "color": "#9d3dcf"
+    },
+    {
+      "id": 8,
+      "name": "NOI/NOI+/CTS",
+      "color": "#111111"
+    }
+  ],
+  "layers": [
+    {
+      "nodes": [
+        "intro-output"
+      ],
+      "average": 1
+    },
+    {
+      "nodes": [
+        "intro-input"
+      ],
+      "average": 1
+    },
+    {
+      "nodes": [
+        "intro-types",
+        "intro-operators",
+        "intro-compare"
+      ],
+      "average": 1
+    },
+    {
+      "nodes": [
+        "intro-division",
+        "intro-char",
+        "intro-func",
+        "intro-for"
+      ],
+      "average": 1
+    },
+    {
+      "nodes": [
+        "intro-digits",
+        "intro-decimals",
+        "intro-logic",
+        "intro-while",
+        "intro-arrays"
+      ],
+      "average": 1.0666666666666667
+    },
+    {
+      "nodes": [
+        "intro-radix",
+        "intro-branches",
+        "intro-count",
+        "intro-string",
+        "intro-vector"
+      ],
+      "average": 1.2142857142857142
+    },
+    {
+      "nodes": [
+        "intro-calendar",
+        "intro-gcd",
+        "intro-nested",
+        "intro-frequency",
+        "intro-recurrence"
+      ],
+      "average": 1.2666666666666666
+    },
+    {
+      "nodes": [
+        "intro-enumerate",
+        "intro-simulate",
+        "intro-recursion",
+        "intro-runs",
+        "intro-matrix"
+      ],
+      "average": 1.2666666666666666
+    },
+    {
+      "nodes": [
+        "intro-complexity",
+        "intro-grid",
+        "intro-tokens",
+        "intro-mirror",
+        "intro-stack"
+      ],
+      "average": 1.2857142857142858
+    },
+    {
+      "nodes": [
+        "intro-subset",
+        "intro-prime",
+        "intro-sort",
+        "intro-prefix",
+        "intro-dp"
+      ],
+      "average": 1.7857142857142858
+    },
+    {
+      "nodes": [
+        "intro-sieve",
+        "intro-set",
+        "intro-queue",
+        "intro-binary",
+        "intro-records"
+      ],
+      "average": 2
+    },
+    {
+      "nodes": [
+        "intro-permutation",
+        "intro-bfs",
+        "intro-binary-answer",
+        "intro-sort-record",
+        "intro-graph"
+      ],
+      "average": 2.076923076923077
+    },
+    {
+      "nodes": [
+        "intro-dfs",
+        "intro-greedy",
+        "intro-map"
+      ],
+      "average": 2.125
+    }
+  ]
+}
